@@ -1,0 +1,108 @@
+<app-cabecalho></app-cabecalho>
+<div class="container-fluid">
+  <div class="row">
+    <h2 class="text-center titulo">Dashboard FORD</h2>
+  </div>
+
+  <div *ngIf="veiculos$|async as veiculos; else elseBlock">
+    <div class="row justify-content-around pt-3">
+      <div class="col-sm-2  rounded border border-secondary p-0">
+        <div class="border rounded-top p-2 bg-light">
+          <p class="cinza fw-bold m-0">Veículos</p>
+        </div>
+        <div class="border rounded-bottom border-bottom-0 pt-3 pb-3 px-3">
+          <select (change)="mudaCarro($event)" class="form-select cinza fw-bold" aria-label="Default select example" [(ngModel)]="valorAlterado">
+            <option *ngFor="let veiculo of veiculos" [value]="veiculo.id">{{veiculo.vehicle}}</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="col-sm-2 rounded border border-secondary p-0">
+        <div class="border rounded-top p-2 bg-light">
+          <p class="m-0 cinza fw-bold">Total de Vendas</p>
+        </div>
+        <div class="border border-bottom-0 rounded-bottom pt-2 pb-3 ps-2">
+          <p class="m-0 info">{{veiculos[(valorSelecionado-1)].volumetotal}}</p>
+          <p class="m-0 cinza unid">Unid.</p>
+        </div>
+      </div>
+
+      <div class="col-sm-2 rounded border border-secondary p-0">
+        <div class="border rounded-top p-2 bg-light">
+          <p class="m-0 cinza fw-bold">Conectados</p>
+        </div>
+        <div class="border border-bottom-0 rounded-bottom pt-2 pb-3 ps-2">
+          <p class="m-0 info">{{veiculos[(valorSelecionado-1)].connected}}</p>
+          <p class="m-0 cinza unid">Unid.</p>
+        </div>
+      </div>
+
+      <div class="col-sm-2 rounded border border-secondary p-0">
+        <div class="border rounded-top p-2 bg-light">
+          <p class="m-0 cinza fw-bold">Update Software</p>
+        </div>
+        <div class="border border-bottom-0 rounded-bottom pt-2 pb-3 ps-2">
+          <p class="m-0 info">{{veiculos[(valorSelecionado-1)].softwareUpdates}}</p>
+          <p class="m-0 cinza unid">Unid.</p>
+        </div>
+      </div>
+
+      <div class="row justify-content-around pt-2">
+        <img class="img d-none d-sm-block w-50" src="assets/img/{{listaImagens[(valorSelecionado-1)]}}.png">
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="informacoes$|async as informacoes; else elseBlock">
+    <div class=" row rodape-um">
+      <div class="col-sm-3 border border-end-0 border-dark p-2">
+        <p class="m-0">Código - Vin</p>
+      </div>
+      <div class=" col-sm-2 border  border-end-0 border-dark p-2">
+        <p class="m-0">Odômetro</p>
+      </div>
+      <div class="col-sm-2 border border-end-0 border-dark p-2">
+        <p class="m-0">Nível de Combustível</p>
+      </div>
+      <div class="col-sm-1 border border-end-0 border-dark p-2">
+        <p class="m-0">Status</p>
+      </div>
+      <div class="col-sm-2 border border-end-0 border-dark p-2">
+        <p class="m-0">Lat.</p>
+      </div>
+      <div class="col-sm-2 border border-dark p-2">
+        <p class="m-0">Long.</p>
+      </div>
+    </div>
+    <div class="row rodape-dois">
+      <div class="col-sm-3 py-2 ps-2 pe-4">
+        <input [formControl]="formulariosInput" (ngModelChange)="altera(informacoes[(valorAlterado)].id)" placeholder="{{informacoes[(valorAlterado)].vin}}" type="text" class="text-input" >
+      </div>
+      <div class=" col-sm-2 p-2">
+        <p class="m-0">{{informacoes[(valorAlterado)].odometer}} Km</p>
+      </div>
+
+      <div class="col-sm-2 p-2">
+        <p class="m-0">{{informacoes[(valorAlterado)].fuelLevel}} %</p>
+      </div>
+      <div class="col-sm-1 p-2">
+        <p class="m-0">{{informacoes[(valorAlterado)].status}}</p>
+      </div>
+      <div class="col-sm-2 p-2">
+        <p class="m-0">{{informacoes[(valorAlterado)].lat}}</p>
+      </div>
+      <div class="col-sm-2 p-2">
+        <p class="m-0">{{informacoes[(valorAlterado)].long}}</p>
+      </div>
+    </div>
+    <div class="row rodape-tres p-2"></div>
+  </div>
+
+  <ng-template #elseBlock><p>Não há dados!</p></ng-template>
+
+</div>
+
+
+
+
+

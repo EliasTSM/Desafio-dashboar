@@ -1,0 +1,18 @@
+.carro{
+  position: absolute;
+}
+
+.boas-vindas{
+  opacity: 90%;
+  width: 52%;
+  height: 500px;
+  position: relative;
+}
+
+.texto-bemVindo{
+  font-size: 21px;
+  color: #08bcdb;
+  font-weight: 500;
+
+}
+

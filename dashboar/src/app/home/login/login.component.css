@@ -1,0 +1,75 @@
+.input-container {
+  position: relative;
+}
+
+input{
+  border-color: gray;
+}
+
+input:focus-within {
+  border: 3px black solid;
+}
+
+label {
+  position: absolute;
+  font-size: 22px;
+  color: green;
+}
+ span {
+  color: green;
+
+ }
+
+ .mostra{
+  position: relative;
+  margin-top: 8px;
+  margin-left: -50px;
+ }
+
+
+ .mostra-senha{
+  position: absolute;
+  font-size: 20px;
+  opacity: 50%;
+  cursor: pointer;
+ }
+
+ .some{
+  opacity: 0%;
+ }
+
+ .exclamacao{
+  position: relative;
+ }
+
+ .exclamacao span {
+  font-size: 15px;
+  color: green;
+  padding: 5px;
+ }
+
+ .exclamacao span .mensagem-exclamacao{
+  position: absolute;
+  font-size: 13px;
+  border: 1px rgb(46, 163, 46) solid;
+  padding: 1px;
+  background: rgb(46, 163, 46);
+  color: black;
+  text-align: justify;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.5s;
+ }
+
+ .exclamacao span:hover .mensagem-exclamacao{
+  opacity: 100%;
+  pointer-events: auto;
+ }
+
+
+.form-control:focus {
+  border-color: black;
+  box-shadow: 0px 0.5px 0.5px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(0, 0, 0, 0.1);
+}
+
+

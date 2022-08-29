@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "-": "^0.0.1",
+    "@angular/cli": "^14.1.0",
+    "bootstrap-icons": "^1.9.1",
+    "g": "^2.0.1"
+  }
+}

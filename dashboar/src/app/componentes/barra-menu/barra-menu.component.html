@@ -1,0 +1,10 @@
+<div [ngClass]="{ 'active-menu': mostraMenu }">
+  <div class="menu-bar">
+    <img class="img d-none d-sm-block w-50 p-2" src="assets/img/ford.png" alt="Logo da Ford">
+    <ng-content></ng-content>
+  </div>
+
+  <div class="overlay" (click)="abreMenu()">
+
+  </div>
+</div>

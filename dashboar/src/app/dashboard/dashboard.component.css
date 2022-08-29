@@ -1,0 +1,40 @@
+.titulo{
+  color:#0343c2;
+  font-size: 40px;
+}
+
+.cinza{
+  color: gray;
+}
+
+.unid{
+  font-size: 13px;
+}
+
+.info{
+ color: rgb(55, 145, 218);
+ font-size: 25px;
+ font-weight: 500;
+}
+
+.rodape-um{
+  background-color: #02369c;
+  color: white;
+  font-size: 18px;
+}
+
+.rodape-dois{
+  font-weight: bold;
+}
+
+.rodape-tres{
+  background-color: #02369c;
+}
+
+.text-input{
+  width:250px
+}
+
+input::placeholder {
+  color: black;
+}

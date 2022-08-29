@@ -1,0 +1,45 @@
+<div class="row align-self-center justify-content-center mb-5 mt-1 pt-2">
+  <img class="img d-none d-sm-block w-25 p-2" src="assets/img/ford.png" alt="Logo da Ford">
+</div>
+<div class="py-5">
+
+  <h4 class="text-center mb-5 mt-4 pt-1 text-success" >Boas-vindas</h4>
+
+  <form class="form ms-5 mb-5 mt-1 pt-1" (ngSubmit)="login()" #loginForm="ngForm">
+
+    <div class="row">
+      <div class="form-group mb-4 input-container col-sm-10">
+        <label for="usuario"><i class="fa fa-user ms-3 mt-2 opacity-75"></i></label>
+        <input id="usuario" class="form-control ps-5 input-focus-border-color:dark" placeholder="Insira seu e-mail"
+        [(ngModel)]="usuario" name="usuario"
+        #campoUsuario = "ngModel" required
+        />
+        <app-mensagem *ngIf="campoUsuario.invalid && campoUsuario.touched" mensagem="Usuário obrigatório"></app-mensagem>
+      </div>
+      <div class="col-sm-2 ps-0 mt-1 exclamacao">
+        <span><i class="fa fa-exclamation-circle opacity-75">
+          <div class="mensagem-exclamacao">Insira seu email ou nome para fazer login.</div>
+        </i></span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group mb-4 input-container col-sm-10">
+        <label for="senha"><i class="fa fa-lock ms-3 mt-2 opacity-75"></i></label>
+        <input [type]="tipoSenha" id="senha" class="form-control ps-5" placeholder="Insira sua senha"
+        [(ngModel)]="senha" name="senha"
+        #campoSenha = "ngModel" required
+        />
+        <app-mensagem *ngIf="campoSenha.invalid && campoSenha.touched" mensagem="Senha obrigatória"></app-mensagem>
+      </div>
+      <div class="col-sm-2 p-0 mostra">
+        <i class="fa fa-eye-slash mostra-senha" (click)="mostraSenha()" [ngClass]="{some: tipoSenha == 'text'}"></i>
+        <i class="fa fa-eye mostra-senha" (click)="mostraSenha()" [ngClass]="{some: tipoSenha == 'password'}"></i>
+      </div>
+    </div>
+    <div class="d-grid gap-2 col-sm-10 pt-4">
+      <button type="submit" class="btn btn-secondary mb-5" [disabled]="loginForm.invalid">Entrar</button>
+    </div>
+  </form>
+
+</div>

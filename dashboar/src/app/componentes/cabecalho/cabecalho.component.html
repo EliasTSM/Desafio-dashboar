@@ -1,0 +1,37 @@
+<header class="sticky-top">
+  <nav class="navbar navbar-light bg-white">
+    <a class="navbar-brand icone">
+      <i class="fa fa-bars ms-3 bg-light p-1" (click)=" barraMenu.abreMenu()"></i>
+    </a>
+    <app-barra-menu #barraMenu>
+      <ul class="list-unstyled">
+        <li>
+          <div class="link-home" routerLinkActive="animacao">
+            <a [routerLink]="['/menu']" class="link" >Home</a>
+          </div>
+        </li>
+        <li>
+          <div class="link-dashboard" routerLinkActive="animacao">
+            <a [routerLink]="['/dashboard']" class="link" >Dashboard</a>
+          </div>
+        </li>
+      </ul>
+    </app-barra-menu>
+    <div *ngIf="user$ | async as user">
+      <div *ngIf="user.name" class="aba" >
+
+        <i class="fa fa-user-circle mr-1 bg-light border-0 rounded-circle icone-logout"></i>
+        <div class="rounded border shadow-sm bg-white rounded aba-extra">
+          <div class="aba-usuario rounded-top">
+            <i class="fa fa-user-circle mr-1 bg-light border-0 rounded-circle icone-logout me-3"> </i>
+            <a class="mr-1 usuario">{{ user.name }}</a>
+          </div>
+          <div (click) = 'logout()' class="aba-out rounded-bottom">
+            <a>Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+</header>

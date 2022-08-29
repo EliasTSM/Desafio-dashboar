@@ -1,0 +1,84 @@
+ul {
+  position: relative;
+}
+
+.icone{
+  color: green;
+}
+
+.link-home{
+  background: rgb(204, 202, 202);
+  padding: 7%;
+  border-bottom: 1px solid white;
+  border-left: 4px solid transparent;
+  box-sizing: border-box;
+}
+
+.link-dashboard{
+  background: rgb(204, 202, 202);
+  padding: 7%;
+  color: green;
+  border-bottom: 1px solid white;
+  border-left: 4px solid transparent;
+  box-sizing: border-box;
+}
+
+.animacao{
+  border-left: 4px solid rgb(143, 33, 33);
+}
+
+.link{
+  text-decoration: none;
+  color: green;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.aba{
+  position: relative;
+  right: 5px;
+}
+
+.aba-extra{
+  position: absolute;
+  left: -150px;
+  opacity: 0%;
+  border: 1px solid rgb(204, 197, 197);
+}
+
+.aba-usuario{
+  background: white;
+  padding: 15px 70px 15px 10px;
+  color: green;
+  border-bottom: 1px solid rgb(204, 197, 197);
+  border-left: 4px solid transparent;
+  box-sizing: border-box;
+}
+
+.aba-out{
+  cursor: pointer;
+  background: white;
+  padding: 10px 70px 10px 10px;
+  color: green;
+  border-bottom: 1px solid rgb(204, 197, 197);
+  border-left: 4px solid transparent;
+  box-sizing: border-box;
+}
+
+.usuario{
+  text-decoration: none;
+  color: green;
+
+}
+
+.icone-logout{
+  color:green;
+  padding: 5px;
+  position: relative;
+}
+
+.aba:hover .aba-extra{
+  opacity: 100%;
+  left: -150px;
+  pointer-events: auto;
+}
